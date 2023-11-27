@@ -48,7 +48,7 @@ public class HerbCleaner extends TaskScript {
   private int cleaned = 0;
 
   @Override
-  protected Class<? extends Task>[] tasks() {
+  public Class<? extends Task>[] tasks() {
     return ArrayUtils.getTypeSafeArray(
         StopTask.class,
         RestockTask.class,
