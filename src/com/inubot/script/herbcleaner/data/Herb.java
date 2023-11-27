@@ -41,9 +41,13 @@ public enum Herb {
     this.cleanId = cleanId;
   }
 
-  public static List<Herb> getCleanable() {
+  public static List<Herb> getCleanable(int ignoreLevel) {
     //use current level instead of base level in case i add boosting in the future
     int level = Skills.getCurrentLevel(Skill.HERBLORE);
+    if (ignoreLevel != -1) {
+      level = Math.min(ignoreLevel, level);
+    }
+
     List<Herb> herbs = new ArrayList<>();
     for (Herb herb : Herb.values()) {
       if (herb.level <= level) {

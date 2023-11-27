@@ -94,7 +94,7 @@ public class BankTask extends Task {
   }
 
   private Herb getBestHerb(Predicate<Herb> predicate) {
-    return Herb.getCleanable()
+    return Herb.getCleanable(domain.getIgnoreLevel())
         .stream()
         .sorted(Comparator.comparingInt(Herb::getLevel).reversed())
         .filter(predicate)

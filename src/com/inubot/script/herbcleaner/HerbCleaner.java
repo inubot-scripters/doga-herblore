@@ -15,6 +15,8 @@ import org.rspeer.game.script.TaskScript;
 import org.rspeer.game.script.meta.ScriptMeta;
 import org.rspeer.game.script.meta.paint.PaintBinding;
 import org.rspeer.game.script.meta.paint.PaintScheme;
+import org.rspeer.game.script.meta.ui.ScriptOption;
+import org.rspeer.game.script.meta.ui.ScriptUI;
 import org.rspeer.game.script.tools.RestockTask;
 import org.rspeer.game.service.inventory.InventoryCache;
 import org.rspeer.game.service.stockmarket.StockMarketService;
@@ -22,6 +24,7 @@ import org.rspeer.game.service.stockmarket.StockMarketService;
 import java.util.function.Supplier;
 
 @ScriptService({InventoryCache.class, StockMarketService.class, Domain.class})
+@ScriptUI(@ScriptOption(name = "Ignore herbs above X level, -1 to not use this setting", type = int.class))
 @ScriptMeta(
     name = "HARAM Herb Cleaner",
     regions = -3,

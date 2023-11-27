@@ -4,6 +4,7 @@ import com.google.inject.Singleton;
 import com.inubot.script.herbcleaner.commons.SilentService;
 import org.rspeer.event.Subscribe;
 import org.rspeer.game.event.TickEvent;
+import org.rspeer.game.script.event.ScriptConfigEvent;
 
 @Singleton
 public class Domain implements SilentService {
@@ -12,6 +13,8 @@ public class Domain implements SilentService {
   private boolean forceBank = false;
   private int lastHerbId = -1;
   private int tick = 0;
+
+  private int ignoreLevel = -1;
 
   public boolean isStopping() {
     return stopping;
@@ -41,8 +44,17 @@ public class Domain implements SilentService {
     return this.tick - tick;
   }
 
+  public int getIgnoreLevel() {
+    return ignoreLevel;
+  }
+
   @Subscribe
   public void tick(TickEvent event) {
     tick++;
+  }
+
+  @Subscribe
+  public void configure(ScriptConfigEvent event) {
+    this.ignoreLevel = event.getSource().getInteger("Ignore herbs above X level, -1 to not use this setting");
   }
 }
