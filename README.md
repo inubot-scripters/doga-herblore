@@ -1,10 +1,9 @@
-# Herb Cleaner
+# HARAM Herb Cleaner
 - Cleans herbs. If you're not an ironman you need a lot of capital as it prioritizes the highest 
   level herbs
 - Tick perfect
 - Restocks and cycles different herbs
 - TURN OFF LEVEL UP DIALOGS
-
 
 ## Disclaimer
 - Not heavily tested
