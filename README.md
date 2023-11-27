@@ -1,3 +1,10 @@
+---
+price: Free
+instances: Unlimited
+title: 'HARAM Herb Cleaner'
+image: 'https://i.imgur.com/1vEIfH0.png'
+---
+
 # HARAM Herb Cleaner
 - Cleans herbs. If you're not an ironman you need a lot of capital as it prioritizes the highest 
   level herbs
@@ -11,4 +18,4 @@
 "i dont have any restocking examples!!! its too hard!!!!" so is my cock
 
 ## Planned
-- UI to select herbs - I cba rn
+- better UI with herb selection - I cba rn someone can contribute this!
