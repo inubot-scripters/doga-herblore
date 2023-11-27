@@ -32,7 +32,7 @@ public enum Herb {
   private final int grimyId;
   private final int cleanId;
 
-  private int lastBuyTick = Integer.MAX_VALUE;
+  private int lastBuyTick = -24000;
 
   Herb(String name, int level, int grimyId, int cleanId) {
     this.name = name;

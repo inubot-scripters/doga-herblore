@@ -47,11 +47,6 @@ public class BankTask extends Task {
       return Bank.open();
     }
 
-    Bank bank = Inventory.bank();
-    if (!bank.contains(iq -> iq.ids(Herb.GRIMY_IDS).results())) {
-      return false;
-    }
-
     BackpackLoadout loadout = new BackpackLoadout("Herbs");
     Herb herb = getBestHerb(x -> !inventory.query(InventoryType.BANK).ids(x.getGrimyId()).stackSize(26).results().isEmpty());
     if (herb == null) {
@@ -64,6 +59,7 @@ public class BankTask extends Task {
       return false;
     }
 
+    Log.info("Hahahah!" + herb.getName(false));
     loadout.add(new ItemEntryBuilder()
         .key(herb.getName(false))
         .quantity(26)
@@ -83,11 +79,12 @@ public class BankTask extends Task {
         return;
       }
 
-      service.submit(StockMarketable.Type.BUY, new StockMarketEntry(next.getGrimyId(), 13000, -1));
+      //-2 means it'll press +5% twice, change to -1 or -3 if you want to buy slwoer/faster
+      service.submit(StockMarketable.Type.BUY, new StockMarketEntry(next.getGrimyId(), 13000, -2));
       //TODO submit selling here so it does it all together
     });
 
-    if (loadout.withdraw(bank)) {
+    if (loadout.withdraw(Inventory.bank())) {
       Interfaces.closeSubs();
       domain.setForceBank(false);
       sleep(3);
