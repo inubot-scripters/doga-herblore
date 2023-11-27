@@ -38,7 +38,7 @@ public class Domain implements SilentService {
   }
 
   public int ticksSince(int tick) {
-    return this.tick = tick;
+    return this.tick - tick;
   }
 
   @Subscribe

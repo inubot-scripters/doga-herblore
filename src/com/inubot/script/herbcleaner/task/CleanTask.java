@@ -5,8 +5,7 @@ import com.inubot.script.herbcleaner.Domain;
 import com.inubot.script.herbcleaner.data.Herb;
 import org.rspeer.game.adapter.component.InterfaceComponent;
 import org.rspeer.game.adapter.component.inventory.Inventory;
-import org.rspeer.game.component.Interfaces;
-import org.rspeer.game.component.Item;
+import org.rspeer.game.component.*;
 import org.rspeer.game.query.results.ItemQueryResults;
 import org.rspeer.game.script.Task;
 import org.rspeer.game.script.TaskDescriptor;
@@ -41,7 +40,7 @@ public class CleanTask extends Task {
       domain.setForceBank(true);
     }
 
-    ItemQueryResults cache = inventory.query().results();
+    ItemQueryResults cache = inventory.query(InventoryType.BACKPACK).results();
     Item firstCached = cache.first();
     if (domain.getLastHerbId() == -1 || (firstCached != null && firstCached.getName().toLowerCase().contains("grimy"))) {
       //If we know the herb id before hand we can force an action before the components are even loaded
