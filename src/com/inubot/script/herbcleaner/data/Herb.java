@@ -15,7 +15,7 @@ public enum Herb {
   HARRALANDER("Harralander", 20, 205, 255),
   RANARR("Ranarr weed", 25, 207, 257),
   TOADFLAX("Toadflax", 30, 3049, 2998),
-  IRIT("Irit", 40, 209, 259),
+  IRIT("Irit leaf", 40, 209, 259),
   AVANTOE("Avantoe", 48, 211, 261),
   KWUARM("Kwuarm", 54, 213, 263),
   SNAPDRAGON("Snapdragon", 59, 3051, 3000),
