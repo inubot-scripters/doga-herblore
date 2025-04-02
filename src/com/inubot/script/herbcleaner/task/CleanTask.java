@@ -48,7 +48,7 @@ public class CleanTask extends Task {
     }
 
     int cleaned = 0;
-    for (int i = 0; i < cache.size(); ++i) {
+    for (int i = cache.size() - 1; i >= 0; --i) {
       if (cleaned == 9 || cleaned == cache.size()) {
         return true;
       }
